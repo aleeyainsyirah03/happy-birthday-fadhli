@@ -32,7 +32,7 @@ const reasons = [
 "Sebab you're the person I prayed for without even realizing it.",
 "Sebab baby the only one I boleh kacau everyday and still know you’ll love me esok hehe.",
 "Sebab I takleh imagine i punya future without you once i bercinta dengan you.",
-"Sebab next year, i tak panggil baby "cik tunang" dah.i dah boleh panggil " my husband ".",
+"Sebab next year, i tak panggil baby 'cik tunang'dah.i dah boleh panggil 'my husband'.",
 "Sebab harini semua orang sambut birthday baby,tapi sejujurnya I rasa I'm the lucky one. Sebab 29 tahun yang lepas , someone amazing was born, and somehow one day, he became mine. ❤️",
 ];
 
