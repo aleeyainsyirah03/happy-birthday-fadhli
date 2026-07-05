@@ -33,7 +33,7 @@ const reasons = [
 "Sebab baby the only one I boleh kacau everyday and still know you’ll love me esok hehe.",
 "Sebab I takleh imagine i punya future without you once i bercinta dengan you.",
 "Sebab next year, i tak panggil baby "cik tunang" dah.i dah boleh panggil " my husband ".",
-"Sebab harini semua orang sambut birthday baby,tapi sejujurnya I rasa I'm the lucky one. Sebab 29 tahun yang lepas , someone amazing was born, and somehow one day, he became mine. ❤️"
+"Sebab harini semua orang sambut birthday baby,tapi sejujurnya I rasa I'm the lucky one. Sebab 29 tahun yang lepas , someone amazing was born, and somehow one day, he became mine. ❤️",
 ];
 
 let currentReason = 0;
@@ -196,7 +196,7 @@ const secretMessages = [
     "Now tutup this website pat",
     "and call me 🤍",
     "eh last last",
- "Thank you for making me the happiest future wife❤️nanti claim 2h1m eh 😋"
+ "Thank you for making me the happiest future wife❤️nanti claim 2h1m eh 😋",
 ];
 
 function openSecretChat(){
@@ -250,7 +250,7 @@ function startMusicOnce(){
 
     bgMusic.play().then(function(){
         musicStarted = true;
-        musicBtn.innerHTML = "🎵";
+        musicBtn.innerHTML = "🎧ྀི";
         musicBtn.classList.add("playing");
     }).catch(function(){
         console.log("Music needs user interaction.");
