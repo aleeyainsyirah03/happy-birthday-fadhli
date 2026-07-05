@@ -5,35 +5,35 @@ setTimeout(function () {
 
 /* 29 BIRTHDAY GIFTS */
 const reasons = [
-"Because no matter how busy you are, you'll still text or call me.",
-"Because every time my phone lights up with your name, automatic I'll smile.",
-"Because even kita LDR, you never make me feel alone.",
-"Because you're my first person that I nak cerita everything.",
-"Because you always know how to calm me down, even when I tengah overthinking.",
-"Because every 'leklok kerja' means a lot to me.",
-"Because I know no matter what happens, you'll always choose us.",
-"Because your voice can literally fix my mood.",
-"Because somehow, you always know when something is wrong with me.",
-"Because with you, I don't have to pretend to be someone else.",
-"Because you're not just my fiancé, you're my best friend too.",
-"Because every VC with you never feels long enough.",
-"Because every goodbye after our calls is still the hardest one.",
-"Because I love dengar you cerita pasal hari you, even benda kecik.",
-"Because every future plan I imagine, you're always in it.",
-"Because you're my favourite notification. Always.",
-"Because you make me feel loved without even trying.",
-"Because whenever something good happens, you're the first person I nak bagitahu.",
-"Because even far away, you still feel like home.",
-"Because every kilometre between Johor and Shah Alam is worth it.",
-"Because you make waiting feel worth it.",
-"Because I know one day all these goodbyes will finally become 'see you tonight'.",
-"Because you always make me believe everything will be okay.",
-"Because I feel safe with you. No explanation needed.",
-"Because you're the person I prayed for without even realizing it.",
-"Because you're the only person I can annoy every day and still know you'll love me tomorrow.",
-"Because I can't imagine my future without you in it.",
-"Because next year, I won't have to call you my fiancé anymore. I'll finally get to call you my husband.",
-"Because today the world celebrates your birthday, but honestly I think I'm the lucky one. Because 29 years ago, someone amazing was born, and somehow one day, he became mine. ❤️"
+"Even sibuk gila pun, baby still reply text i and call i.",
+"Every time phone nyala nama baby, auto senyum bodoh tu keluar.",
+"Even kita LDR, baby tak buat I rasa lonely.",
+"Sebab baby are my first person I nak spill everything",
+"Sebab baby always tahu how nak tenangkan I, even when I tengah overthinking *walaupun kadang kadang tak 🙄.",
+"Sebab setiap 'leklok kerja' means a lot to me.",
+"Sebab I know no matter what happens, baby will always choose us.",
+"Sebab suara baby literally fix my mood.",
+"Sebab somehow you always can detect bila I tak okay.",
+"Sebab dengan you,I tak payah jadi orang lain",
+"Sebab baby bukan tunang i jerr , baby kawan baik i jugak hehe.",
+"Sebab setiap kali VC takpernah rasa lama,tak puas HAHAHA.",
+"Sebab every bye after our calls is still the hardest one.",
+"Sebab I suka dengar you cerita pasal hari you, even benda kecik.",
+"Sebab every future plan I fikir, you're always in it.",
+"Sebab you're my favourite notification. Always.",
+"Sebab you make me feel loved without even trying.",
+"Sebab Whenever ada good news, you’re the first person I nak bagitahu.",
+"Sebab walaupun kita jauh, baby still feel like home.",
+"Sebab Every KM between Johor and Shah Alam worth it lah bro.",
+"Sebab you make waiting feel worth it.",
+"Sebab I know one day all these goodbyes will finally become 'jumpa you malam ni'.",
+"Sebab you always buat i percaya everything will be okay.",
+"Sebab I rasa selamat dengan baby . No explanation needed.",
+"Sebab you're the person I prayed for without even realizing it.",
+"Sebab baby the only one I boleh kacau everyday and still know you’ll love me esok hehe.",
+"Sebab I takleh imagine i punya future without you once i bercinta dengan you.",
+"Sebab next year, i tak panggil baby "cik tunang" dah.i dah boleh panggil " my husband ".",
+"Sebab harini semua orang sambut birthday baby,tapi sejujurnya I rasa I'm the lucky one. Sebab 29 tahun yang lepas , someone amazing was born, and somehow one day, he became mine. ❤️"
 ];
 
 let currentReason = 0;
@@ -188,15 +188,15 @@ const chatMessages = document.getElementById("chatMessages");
 
 const secretMessages = [
     "Hi Babykuu",
-    "Kalau dah jumpa secret chat ni, maksudnya baby dah sampai ke penghujung 😂",
+    "Kalau dah jumpa secret chat ni, maksudnya baby dah sampai penghujung 🥹",
     "Thank you sebab baca every part of this little website.",
     "I know kita jauh harini...",
     "tapi i harap soon kita akan celebrate together.",
     "I love you. Always n Forever. ❤️",
     "Now tutup this website pat",
-    "and call your singa 🤍",
+    "and call me 🤍",
     "eh last last",
- "Thank you for making me the happiest future wife. ❤️"
+ "Thank you for making me the happiest future wife❤️nanti claim 2h1m eh 😋"
 ];
 
 function openSecretChat(){
@@ -263,7 +263,7 @@ if (musicBtn && bgMusic) {
     musicBtn.onclick = function () {
         if (bgMusic.paused) {
             bgMusic.play();
-            musicBtn.innerHTML = "🎵";
+            musicBtn.innerHTML = "🎧ྀི";
             musicBtn.classList.add("playing");
         } else {
             bgMusic.pause();
