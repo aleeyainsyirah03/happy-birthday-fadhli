@@ -2,6 +2,8 @@
    BIRTHDAY INTRO
 ========================= */
 
+document.documentElement.classList.add("intro-locked");
+document.body.classList.add("intro-locked");
 const loadingScreen = document.getElementById("loading");
 const ageNumber = document.getElementById("ageNumber");
 const loadingMessage = document.getElementById("loadingMessage");
@@ -112,7 +114,8 @@ if (beginBtn) {
 
             setTimeout(function () {
                 loadingScreen.style.display = "none";
-
+document.documentElement.classList.remove("intro-locked");
+document.body.classList.remove("intro-locked");
                 if (hero) {
                     hero.scrollIntoView({
                         behavior: "smooth"
@@ -127,9 +130,9 @@ startBirthdayCount();
 
 /* 29 BIRTHDAY GIFTS */
 const reasons = [
-"Even sibuk gila pun, baby still reply text i and call i.",
-"Every time phone nyala nama baby, auto senyum bodoh tu keluar.",
-"Even kita LDR, baby tak buat I rasa lonely.",
+"Ada 29 reason gifts , baca elok elok tau.",
+"Sebab ini je i mampu buat untuk tahun ni,even tak seberapa tapi semuanya i buat sendiri special untuk you",
+"Even kita LDR, baby tak buat I rasa lonely.Even baby penat kerja , baby tetap layan i",
 "Sebab baby are my first person I nak spill everything",
 "Sebab baby always tahu how nak tenangkan I, even when I tengah overthinking *walaupun kadang kadang tak 🙄.",
 "Sebab setiap 'leklok kerja' means a lot to me.",
@@ -138,7 +141,7 @@ const reasons = [
 "Sebab somehow you always can detect bila I tak okay.",
 "Sebab dengan you,I tak payah jadi orang lain",
 "Sebab baby bukan tunang i jerr , baby kawan baik i jugak hehe.",
-"Sebab setiap kali VC takpernah rasa lama,tak puas HAHAHA.",
+"Sebab setiap kali VC takpernah rasa lama.",
 "Sebab every bye after our calls is still the hardest one.",
 "Sebab I suka dengar you cerita pasal hari you, even benda kecik.",
 "Sebab every future plan I fikir, you're always in it.",
