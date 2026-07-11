@@ -1,7 +1,129 @@
-setTimeout(function () {
-        const loading = document.getElementById("loading");
-        if (loading) loading.style.display = "none";
-    }, 3000);
+/* =========================
+   BIRTHDAY INTRO
+========================= */
+
+const loadingScreen = document.getElementById("loading");
+const ageNumber = document.getElementById("ageNumber");
+const loadingMessage = document.getElementById("loadingMessage");
+const beginBtn = document.getElementById("beginBtn");
+const fireworksContainer = document.getElementById("fireworksContainer");
+
+let currentAge = 0;
+let introFinished = false;
+let fireworkTimer;
+
+/* CREATE ONE FIREWORK */
+
+function createFirework() {
+    if (!fireworksContainer || introFinished) return;
+
+    const firework = document.createElement("div");
+
+    firework.className = "firework";
+
+    firework.style.left = 10 + Math.random() * 80 + "%";
+    firework.style.top = 8 + Math.random() * 65 + "%";
+
+    const randomScale = 0.7 + Math.random() * 0.6;
+    firework.style.setProperty("--fireworkScale", randomScale);
+
+    fireworksContainer.appendChild(firework);
+
+    setTimeout(function () {
+        firework.remove();
+    }, 1400);
+}
+
+/* FIREWORK SPEED BECOMES SLOWER */
+
+function scheduleFirework() {
+    if (introFinished) return;
+
+    createFirework();
+
+    const delay = 250 + currentAge * 45;
+
+    fireworkTimer = setTimeout(scheduleFirework, delay);
+}
+
+/* COUNT FROM 0 TO 29 */
+
+function startBirthdayCount() {
+    if (!ageNumber) return;
+
+    ageNumber.textContent = "0";
+    scheduleFirework();
+
+    const countTimer = setInterval(function () {
+        currentAge++;
+
+        ageNumber.textContent = currentAge;
+
+        if (currentAge >= 29) {
+            clearInterval(countTimer);
+            finishBirthdayIntro();
+        }
+    }, 230);
+}
+
+/* FINAL AGE 29 */
+
+function finishBirthdayIntro() {
+    introFinished = true;
+
+    clearTimeout(fireworkTimer);
+
+    if (fireworksContainer) {
+        setTimeout(function () {
+            fireworksContainer.innerHTML = "";
+        }, 1300);
+    }
+
+    if (loadingMessage) {
+        loadingMessage.classList.add("final");
+        loadingMessage.textContent = "I made this special for you";
+    }
+
+    if (beginBtn) {
+        setTimeout(function () {
+            beginBtn.style.display = "block";
+        }, 900);
+    }
+}
+
+/* BEGIN WEBSITE + START MUSIC */
+
+if (beginBtn) {
+    beginBtn.addEventListener("click", function () {
+        const bgMusic = document.getElementById("bgMusic");
+        const hero = document.getElementById("hero");
+
+        if (bgMusic) {
+            bgMusic.volume = 0.35;
+
+            bgMusic.play().catch(function () {
+                console.log("Music could not start.");
+            });
+        }
+
+        if (loadingScreen) {
+            loadingScreen.style.transition = "opacity .9s ease";
+            loadingScreen.style.opacity = "0";
+
+            setTimeout(function () {
+                loadingScreen.style.display = "none";
+
+                if (hero) {
+                    hero.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                }
+            }, 900);
+        }
+    });
+}
+
+startBirthdayCount();
 
 /* 29 BIRTHDAY GIFTS */
 const reasons = [
@@ -257,8 +379,6 @@ function startMusicOnce(){
     });
 }
 
-document.addEventListener("click", startMusicOnce);
-document.addEventListener("touchstart", startMusicOnce);
 if (musicBtn && bgMusic) {
     musicBtn.onclick = function () {
         if (bgMusic.paused) {
