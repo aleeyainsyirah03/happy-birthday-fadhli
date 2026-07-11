@@ -1254,3 +1254,318 @@ ENDING
     font-style:italic;
     letter-spacing:.5px;
 }
+
+/* =========================
+   BIRTHDAY LOADING SCREEN
+========================= */
+
+#loading{
+    position:fixed;
+    inset:0;
+    width:100%;
+    min-height:100vh;
+    overflow:hidden;
+    z-index:999999;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:24px;
+    text-align:center;
+
+    background:
+        radial-gradient(circle at center, rgba(255,210,205,.35), transparent 55%),
+        linear-gradient(160deg,#6f3038,#b85f67);
+}
+
+#fireworksContainer{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:1;
+}
+
+.birthday-intro{
+    position:relative;
+    z-index:3;
+    width:100%;
+    max-width:430px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    color:#fff8f4;
+}
+
+.birthday-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(42px,12vw,64px);
+    line-height:1;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    margin-bottom:22px;
+}
+
+.age-wrap{
+    position:relative;
+    display:inline-flex;
+    justify-content:center;
+    align-items:flex-start;
+    min-height:100px;
+    margin-bottom:8px;
+}
+
+#ageNumber{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(92px,28vw,145px);
+    line-height:.8;
+    font-weight:500;
+    text-shadow:0 0 20px rgba(255,255,255,.28);
+}
+
+.age-suffix{
+    font-family:'Cormorant Garamond',serif;
+    font-size:26px;
+    margin:8px 0 0 5px;
+}
+
+.cake-wrap{
+    position:relative;
+    width:180px;
+    height:125px;
+    margin:10px auto 22px;
+}
+
+.candle{
+    position:absolute;
+    top:3px;
+    left:50%;
+    transform:translateX(-50%);
+    width:12px;
+    height:48px;
+    border-radius:8px 8px 2px 2px;
+    background:repeating-linear-gradient(
+        45deg,
+        #f7c5bc 0 7px,
+        #fff4ef 7px 14px
+    );
+    z-index:4;
+}
+
+.candle::before{
+    content:"";
+    position:absolute;
+    width:16px;
+    height:25px;
+    left:50%;
+    top:-23px;
+    transform:translateX(-50%);
+    border-radius:50% 50% 45% 45%;
+    background:linear-gradient(#fff7a8,#ff9a4b,#ff584d);
+    box-shadow:
+        0 0 10px #ffd56b,
+        0 0 22px rgba(255,146,75,.75);
+    animation:candleFlame .8s ease-in-out infinite alternate;
+}
+
+.cake{
+    position:absolute;
+    left:50%;
+    bottom:0;
+    transform:translateX(-50%);
+    width:170px;
+    height:82px;
+    border-radius:16px 16px 28px 28px;
+    background:
+        linear-gradient(
+            to bottom,
+            #9e4d55 0 31%,
+            #c87379 31% 36%,
+            #9e4d55 36% 67%,
+            #c87379 67% 72%,
+            #9e4d55 72%
+        );
+    box-shadow:
+        0 18px 28px rgba(38,12,17,.32),
+        inset 0 -8px 15px rgba(70,20,25,.2);
+}
+
+.cake::after{
+    content:"";
+    position:absolute;
+    left:-12px;
+    bottom:-9px;
+    width:194px;
+    height:18px;
+    border-radius:50%;
+    background:#f5d7d3;
+    box-shadow:0 8px 14px rgba(40,15,20,.25);
+    z-index:-1;
+}
+
+.cake-icing{
+    position:absolute;
+    left:0;
+    top:-4px;
+    width:100%;
+    height:31px;
+    border-radius:18px 18px 13px 13px;
+    background:#fff0eb;
+}
+
+.cake-icing::after{
+    content:"";
+    position:absolute;
+    left:15px;
+    top:18px;
+    width:25px;
+    height:24px;
+    border-radius:0 0 18px 18px;
+    background:#fff0eb;
+
+    box-shadow:
+        33px 4px 0 -2px #fff0eb,
+        68px -1px 0 3px #fff0eb,
+        106px 5px 0 -3px #fff0eb;
+}
+
+.loading-message{
+    min-height:42px;
+    margin-top:8px;
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:24px;
+    letter-spacing:7px;
+    text-transform:uppercase;
+
+    transition:.6s ease;
+}
+
+.loading-message.final{
+    font-family:'Cormorant Garamond',serif;
+    font-size:30px;
+    line-height:1.25;
+    letter-spacing:1px;
+    text-transform:none;
+    font-style:italic;
+}
+
+.begin-btn{
+    display:none;
+    margin-top:30px;
+    min-width:180px;
+    padding:15px 35px;
+
+    border:1px solid rgba(255,255,255,.55);
+    border-radius:50px;
+
+    background:rgba(255,245,242,.94);
+    color:#74333c;
+
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+
+    box-shadow:0 15px 35px rgba(52,15,20,.25);
+    animation:beginReveal .8s ease forwards;
+}
+
+.begin-btn:active{
+    transform:scale(.96);
+}
+
+/* FIREWORK PARTICLES */
+
+.firework{
+    position:absolute;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+
+    background:#ffd7cc;
+    box-shadow:
+        0 -55px #fff0c5,
+        39px -39px #ffbcae,
+        55px 0 #ffe1a8,
+        39px 39px #fff0dd,
+        0 55px #ff9f9f,
+        -39px 39px #ffd3b6,
+        -55px 0 #fff1c9,
+        -39px -39px #ffb6c4;
+
+    animation:fireworkBurst 1.3s ease-out forwards;
+}
+
+@keyframes fireworkBurst{
+    0%{
+        opacity:0;
+        transform:scale(.15);
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(1.25);
+    }
+}
+
+@keyframes candleFlame{
+    from{
+        transform:translateX(-50%) rotate(-3deg) scale(.92);
+    }
+
+    to{
+        transform:translateX(-50%) rotate(3deg) scale(1.07);
+    }
+}
+
+@keyframes beginReveal{
+    from{
+        opacity:0;
+        transform:translateY(16px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:600px){
+
+    #loading{
+        min-height:100svh;
+        padding:24px 20px;
+    }
+
+    .birthday-title{
+        font-size:44px;
+        letter-spacing:2px;
+    }
+
+    #ageNumber{
+        font-size:118px;
+    }
+
+    .cake-wrap{
+        transform:scale(.88);
+        margin:0 auto 12px;
+    }
+
+    .loading-message{
+        font-size:20px;
+        letter-spacing:5px;
+    }
+
+    .loading-message.final{
+        font-size:27px;
+        letter-spacing:0;
+    }
+}
