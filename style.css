@@ -1569,3 +1569,13 @@ ENDING
         letter-spacing:0;
     }
 }
+html.intro-locked,
+body.intro-locked{
+    height:100%;
+    overflow:hidden !important;
+    overscroll-behavior:none;
+}
+
+#loading{
+    touch-action:none;
+}
